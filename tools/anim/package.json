@@ -1,0 +1,11 @@
+{
+  "name": "pro-video-anim",
+  "private": true,
+  "description": "three.js 教學動畫的渲染環境（tools/anim/render.py 會用到）",
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/noto-sans-tc": "^5.3.1",
+    "gifsicle": "^7.0.1",
+    "three": "^0.186.1"
+  }
+}

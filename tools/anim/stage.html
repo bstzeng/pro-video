@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>動畫舞台</title>
+<link rel="stylesheet" href="node_modules/@fontsource/noto-sans-tc/500.css">
+<link rel="stylesheet" href="node_modules/@fontsource/noto-sans-tc/700.css">
+<link rel="stylesheet" href="node_modules/@fontsource/jetbrains-mono/500.css">
+<style>
+  html, body { margin: 0; background: #05070d; }
+  canvas { display: block; }
+</style>
+<script type="importmap">
+{ "imports": {
+    "three": "./node_modules/three/build/three.module.js",
+    "three/addons/": "./node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<!-- 用法：stage.html?scene=complex-numbers/l11-multiply&f=45（f 指定預覽第幾格）。
+     render.py 會呼叫 window.renderFrame(i) 逐格取圖。 -->
+<script type="module">
+import { createStage, N, FONT_ZH, FONT_MONO } from "./engine.js";
+
+const params = new URLSearchParams(location.search);
+const def = (await import(`./scenes/${params.get("scene")}.js`)).default;
+const stage = createStage(def);
+document.body.appendChild(stage.canvas);
+
+// 先把每一格的 HUD 都畫過一次，收集用到的字，再載入對應的字型子集
+for (let i = 0; i < N; i++) stage.warm(i);
+const all = [...stage.hud.used].map((s) => s.slice(1)).join("");
+const zh = all;   // 等寬字裡的中文也要用 Noto，所以全部都載
+const mono = [...stage.hud.used].filter((s) => s[0] === "m").map((s) => s.slice(1)).join("");
+await Promise.all([
+  document.fonts.load(`700 20px ${FONT_ZH}`, zh || "字"),
+  document.fonts.load(`500 20px ${FONT_ZH}`, zh || "字"),
+  document.fonts.load(`500 20px ${FONT_MONO}`, mono || "0"),
+]);
+await document.fonts.ready;
+
+window.sceneInfo = { id: def.id, frames: N, poster: def.poster ?? 0 };
+window.renderFrame = (i) => stage.frame(i).toDataURL("image/png");
+stage.frame(+(params.get("f") || 0));
+window.stageReady = true;
+</script>
+</body>
+</html>

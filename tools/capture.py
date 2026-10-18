@@ -116,7 +116,7 @@ async def main():
     prof = os.path.abspath(args.professor)
 
     with open(os.path.join(ROOT, "clips", "clips.json"), encoding="utf-8") as f:
-        clips = json.load(f)["clips"]
+        clips = [c for c in json.load(f)["clips"] if "anim" not in c]   # three.js 動畫由 anim/render.py 負責
     if args.ids:
         clips = [c for c in clips if c["id"] in args.ids]
         missing = set(args.ids) - {c["id"] for c in clips}

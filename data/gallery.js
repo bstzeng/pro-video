@@ -539,7 +539,7 @@ window.GALLERY = {
       "icon": "🌀",
       "description": "專為「會算但想像不出來」的人設計：不從 i² = -1 出發，而是從三次方程式為何非得繞道負數開根號講起；再給出關鍵的那張圖——複數住在平面上，加法是平移、乘法是旋轉加縮放，i² = -1 是「轉兩次九十度」的結果。接著推出棣美弗與尤拉公式，並展示它在交流電、訊號、量子力學與控制系統裡真正的用途。",
       "url": "https://bstzeng.github.io/professor/topics/complex-numbers/index.html",
-      "clips": 0
+      "clips": 44
     },
     {
       "id": "laplace-transform",
@@ -1676,5 +1676,754 @@ window.GALLERY = {
       "clips": 0
     }
   ],
-  "clips": []
+  "clips": [
+    {
+      "id": "l01-half-turn",
+      "topic": "complex-numbers",
+      "title": "乘 −1 就是轉半圈",
+      "caption": "實數乘法只會放大與翻面；把翻面看成轉 180°，轉一半就停在 i。",
+      "gif": "gifs/complex-numbers/l01-half-turn.gif",
+      "poster": "gifs/complex-numbers/l01-half-turn.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7169,
+      "lesson": {
+        "label": "第 1 課",
+        "title": "問題出在「虛數」這個名字",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-01.html"
+      }
+    },
+    {
+      "id": "l02-wave-sum",
+      "topic": "complex-numbers",
+      "title": "兩條波相加＝兩根箭頭相加",
+      "caption": "同頻率的波相加，不用三角恆等式：兩根旋轉箭頭頭尾相接就是答案。",
+      "gif": "gifs/complex-numbers/l02-wave-sum.gif",
+      "poster": "gifs/complex-numbers/l02-wave-sum.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7219,
+      "lesson": {
+        "label": "第 2 課",
+        "title": "你其實已經在用它了",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-02.html"
+      }
+    },
+    {
+      "id": "l05-cubic-pressure",
+      "topic": "complex-numbers",
+      "title": "壓力來自三次方程式",
+      "caption": "x²+1=0 無解可以接受；x³=15x+4 的解都是實數，公式卻要經過 √(−121)。",
+      "gif": "gifs/complex-numbers/l05-cubic-pressure.gif",
+      "poster": "gifs/complex-numbers/l05-cubic-pressure.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3613,
+      "lesson": {
+        "label": "第 5 課",
+        "title": "起點的誤會：不是為了解 x² + 1 = 0",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-05.html"
+      }
+    },
+    {
+      "id": "l06-irreducible",
+      "topic": "complex-numbers",
+      "title": "不可約情形",
+      "caption": "參數 p 掃過時，三個實根一出現，判別式 Δ 就變成負數。",
+      "gif": "gifs/complex-numbers/l06-irreducible.gif",
+      "poster": "gifs/complex-numbers/l06-irreducible.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4077,
+      "lesson": {
+        "label": "第 6 課",
+        "title": "三次方程式與那個繞不過去的路口",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-06.html"
+      }
+    },
+    {
+      "id": "l07-bombelli",
+      "topic": "complex-numbers",
+      "title": "邦貝利：先算下去再說",
+      "caption": "∛(2+11i) 與 ∛(2−11i) 開立方根成 2±i，相加後虛部抵銷，得到 4。",
+      "gif": "gifs/complex-numbers/l07-bombelli.gif",
+      "poster": "gifs/complex-numbers/l07-bombelli.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3541,
+      "lesson": {
+        "label": "第 7 課",
+        "title": "邦貝利的決定：先算下去再說",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-07.html"
+      }
+    },
+    {
+      "id": "l08-history",
+      "topic": "complex-numbers",
+      "title": "從中間值到真正的數",
+      "caption": "從卡爾達諾到高斯：先有用、後有意義，直到畫上平面才被接受。",
+      "gif": "gifs/complex-numbers/l08-history.gif",
+      "poster": "gifs/complex-numbers/l08-history.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 2474,
+      "lesson": {
+        "label": "第 8 課",
+        "title": "從中間值到真正的數",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-08.html"
+      }
+    },
+    {
+      "id": "l09-line-to-plane",
+      "topic": "complex-numbers",
+      "title": "從線到面",
+      "caption": "實數線擴成平面，實數都躺在橫軸上；一個複數可以讀成點，也可以讀成箭頭。",
+      "gif": "gifs/complex-numbers/l09-line-to-plane.gif",
+      "poster": "gifs/complex-numbers/l09-line-to-plane.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6021,
+      "lesson": {
+        "label": "第 9 課",
+        "title": "把複數畫在平面上",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-09.html"
+      }
+    },
+    {
+      "id": "l10-addition",
+      "topic": "complex-numbers",
+      "title": "加法就是平移",
+      "caption": "第二根箭頭平移到第一根的尖端，頭尾相接就是和。",
+      "gif": "gifs/complex-numbers/l10-addition.gif",
+      "poster": "gifs/complex-numbers/l10-addition.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6794,
+      "lesson": {
+        "label": "第 10 課",
+        "title": "加法就是平移",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-10.html"
+      }
+    },
+    {
+      "id": "l10-conjugate",
+      "topic": "complex-numbers",
+      "title": "共軛是鏡射",
+      "caption": "z̄ 是 z 對實軸的鏡像；z·z̄ 角度相消，永遠落在實軸上等於 |z|²。",
+      "gif": "gifs/complex-numbers/l10-conjugate.gif",
+      "poster": "gifs/complex-numbers/l10-conjugate.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5333,
+      "lesson": {
+        "label": "第 10 課",
+        "title": "加法就是平移",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-10.html"
+      }
+    },
+    {
+      "id": "l11-multiply",
+      "topic": "complex-numbers",
+      "title": "乘法就是旋轉加縮放",
+      "caption": "乘上 z = 1.2∠40°，整個平面一起轉 40°、放大 1.2 倍：長度相乘、角度相加。",
+      "gif": "gifs/complex-numbers/l11-multiply.gif",
+      "poster": "gifs/complex-numbers/l11-multiply.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7576,
+      "lesson": {
+        "label": "第 11 課",
+        "title": "乘法就是旋轉加縮放",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-11.html"
+      }
+    },
+    {
+      "id": "l12-i-cycle",
+      "topic": "complex-numbers",
+      "title": "i 的四次循環",
+      "caption": "每乘一次 i 就轉 90°：1 → i → −1 → −i → 1，轉滿一圈回到原點。",
+      "gif": "gifs/complex-numbers/l12-i-cycle.gif",
+      "poster": "gifs/complex-numbers/l12-i-cycle.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6466,
+      "lesson": {
+        "label": "第 12 課",
+        "title": "i 的四次循環與旋轉的證據",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-12.html"
+      }
+    },
+    {
+      "id": "l13-polar",
+      "topic": "complex-numbers",
+      "title": "模與輻角",
+      "caption": "同一個點，直角座標 (x, y) 與極座標 (r, θ) 同步變化；算輻角要看象限。",
+      "gif": "gifs/complex-numbers/l13-polar.gif",
+      "poster": "gifs/complex-numbers/l13-polar.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5079,
+      "lesson": {
+        "label": "第 13 課",
+        "title": "模與輻角：複數的另一種寫法",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-13.html"
+      }
+    },
+    {
+      "id": "l14-mul-rule",
+      "topic": "complex-numbers",
+      "title": "長度相乘、角度相加",
+      "caption": "z₁、z₂ 與乘積 z₁z₂ 即時對照：模相乘、輻角相加。",
+      "gif": "gifs/complex-numbers/l14-mul-rule.gif",
+      "poster": "gifs/complex-numbers/l14-mul-rule.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7542,
+      "lesson": {
+        "label": "第 14 課",
+        "title": "極座標下的乘法與棣美弗定理",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-14.html"
+      }
+    },
+    {
+      "id": "l14-roots",
+      "topic": "complex-numbers",
+      "title": "n 次方根是正 n 邊形",
+      "caption": "1 的 3、4、5、6 次方根均勻分布在單位圓上，連成正多邊形。",
+      "gif": "gifs/complex-numbers/l14-roots.gif",
+      "poster": "gifs/complex-numbers/l14-roots.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4684,
+      "lesson": {
+        "label": "第 14 課",
+        "title": "極座標下的乘法與棣美弗定理",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-14.html"
+      }
+    },
+    {
+      "id": "l15-euler",
+      "topic": "complex-numbers",
+      "title": "e^{iθ} 是等速旋轉",
+      "caption": "速度永遠是位置乘 i——垂直於半徑，所以點沿著圓走。",
+      "gif": "gifs/complex-numbers/l15-euler.gif",
+      "poster": "gifs/complex-numbers/l15-euler.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6082,
+      "lesson": {
+        "label": "第 15 課",
+        "title": "尤拉公式：e^(iθ) 到底是什麼",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-15.html"
+      }
+    },
+    {
+      "id": "l16-euler-identity",
+      "topic": "complex-numbers",
+      "title": "e^{iπ} = −1",
+      "caption": "沿單位圓走弧長 π，剛好轉半圈走到 −1。",
+      "gif": "gifs/complex-numbers/l16-euler-identity.gif",
+      "poster": "gifs/complex-numbers/l16-euler-identity.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6929,
+      "lesson": {
+        "label": "第 16 課",
+        "title": "e^(iπ) + 1 = 0 的真正意思",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-16.html"
+      }
+    },
+    {
+      "id": "l17-wave-shadow",
+      "topic": "complex-numbers",
+      "title": "波，就是旋轉的影子",
+      "caption": "旋轉箭頭沿時間軸拉開成螺旋：照在牆上是 sin，照在地上是 cos。",
+      "gif": "gifs/complex-numbers/l17-wave-shadow.gif",
+      "poster": "gifs/complex-numbers/l17-wave-shadow.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 9109,
+      "lesson": {
+        "label": "第 17 課",
+        "title": "波，就是旋轉的影子",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-17.html"
+      }
+    },
+    {
+      "id": "l18-eigen-signal",
+      "topic": "complex-numbers",
+      "title": "正弦波進、正弦波出",
+      "caption": "線性系統只改正弦波的振幅與相位——一個複數就說完；方波進去則會變形。",
+      "gif": "gifs/complex-numbers/l18-eigen-signal.gif",
+      "poster": "gifs/complex-numbers/l18-eigen-signal.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5361,
+      "lesson": {
+        "label": "第 18 課",
+        "title": "世界上有多少東西在振盪",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-18.html"
+      }
+    },
+    {
+      "id": "l19-derivative",
+      "topic": "complex-numbers",
+      "title": "微分＝乘以 iω",
+      "caption": "e^{iωt} 的導數永遠超前 90°、長度放大 ω 倍：微分變成乘法。",
+      "gif": "gifs/complex-numbers/l19-derivative.gif",
+      "poster": "gifs/complex-numbers/l19-derivative.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4990,
+      "lesson": {
+        "label": "第 19 課",
+        "title": "為什麼複數是描述振盪的最佳語言",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-19.html"
+      }
+    },
+    {
+      "id": "l20-lead-lag",
+      "topic": "complex-numbers",
+      "title": "電感超前、電容落後",
+      "caption": "電阻同相，電感讓電壓超前 90°、電容讓電壓落後 90°——正好是乘 i 與除以 i。",
+      "gif": "gifs/complex-numbers/l20-lead-lag.gif",
+      "poster": "gifs/complex-numbers/l20-lead-lag.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7508,
+      "lesson": {
+        "label": "第 20 課",
+        "title": "交流電的麻煩：不同步",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-20.html"
+      }
+    },
+    {
+      "id": "l21-phasor",
+      "topic": "complex-numbers",
+      "title": "相量：把一條波壓成一個複數",
+      "caption": "同頻率的箭頭一起轉；拿掉共同的轉動 e^{iωt}，只剩長度與角度。",
+      "gif": "gifs/complex-numbers/l21-phasor.gif",
+      "poster": "gifs/complex-numbers/l21-phasor.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4862,
+      "lesson": {
+        "label": "第 21 課",
+        "title": "相量：把一條波壓成一個複數",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-21.html"
+      }
+    },
+    {
+      "id": "l22-impedance",
+      "topic": "complex-numbers",
+      "title": "阻抗：三種元件統一成一個數",
+      "caption": "Z_R 在實軸、Z_L 朝 +i、Z_C 朝 −i；頻率改變時長度跟著變。",
+      "gif": "gifs/complex-numbers/l22-impedance.gif",
+      "poster": "gifs/complex-numbers/l22-impedance.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5318,
+      "lesson": {
+        "label": "第 22 課",
+        "title": "阻抗：把三種元件統一成一個數",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-22.html"
+      }
+    },
+    {
+      "id": "l23-lowpass",
+      "topic": "complex-numbers",
+      "title": "RC 低通濾波",
+      "caption": "H(ω) = 1/(1+iωRC) 沿半圓從 1 走向 0，相位從 0° 移到 −90°。",
+      "gif": "gifs/complex-numbers/l23-lowpass.gif",
+      "poster": "gifs/complex-numbers/l23-lowpass.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5333,
+      "lesson": {
+        "label": "第 23 課",
+        "title": "完整例題：RC 電路從頭算到尾",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-23.html"
+      }
+    },
+    {
+      "id": "l24-square-epicycles",
+      "topic": "complex-numbers",
+      "title": "旋轉疊出方波",
+      "caption": "1、3、5、7 倍頻的箭頭一節接一節轉動，尖端的高度畫出方波。",
+      "gif": "gifs/complex-numbers/l24-square-epicycles.gif",
+      "poster": "gifs/complex-numbers/l24-square-epicycles.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7689,
+      "lesson": {
+        "label": "第 24 課",
+        "title": "任何訊號，都是一堆旋轉疊起來的",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-24.html"
+      }
+    },
+    {
+      "id": "l25-negative-freq",
+      "topic": "complex-numbers",
+      "title": "負頻率＝反方向旋轉",
+      "caption": "逆時針與順時針的兩根箭頭相加，上下抵銷，只剩在實軸上來回的 cos。",
+      "gif": "gifs/complex-numbers/l25-negative-freq.gif",
+      "poster": "gifs/complex-numbers/l25-negative-freq.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6683,
+      "lesson": {
+        "label": "第 25 課",
+        "title": "為什麼用複數指數而不用 sin 和 cos",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-25.html"
+      }
+    },
+    {
+      "id": "l26-time-freq",
+      "topic": "complex-numbers",
+      "title": "時域與頻域",
+      "caption": "同一個訊號：正面看是波形，轉到側面看是一根根頻率柱。",
+      "gif": "gifs/complex-numbers/l26-time-freq.gif",
+      "poster": "gifs/complex-numbers/l26-time-freq.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6498,
+      "lesson": {
+        "label": "第 26 課",
+        "title": "頻域是什麼，以及往下走的路",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-26.html"
+      }
+    },
+    {
+      "id": "l27-interference",
+      "topic": "complex-numbers",
+      "title": "機率幅相加：干涉",
+      "caption": "雙狹縫：光子一顆顆打上屏幕；兩個帶相位的機率幅相加再平方，累積出條紋。",
+      "gif": "gifs/complex-numbers/l27-interference.gif",
+      "poster": "gifs/complex-numbers/l27-interference.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3627,
+      "lesson": {
+        "label": "第 27 課",
+        "title": "在量子力學裡，複數不是選項",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-27.html"
+      }
+    },
+    {
+      "id": "l28-relative-phase",
+      "topic": "complex-numbers",
+      "title": "整體相位 vs 相對相位",
+      "caption": "兩根指針一起轉，亮度不變；只轉其中一根，亮度就改變。",
+      "gif": "gifs/complex-numbers/l28-relative-phase.gif",
+      "poster": "gifs/complex-numbers/l28-relative-phase.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 7497,
+      "lesson": {
+        "label": "第 28 課",
+        "title": "相位：看不見卻決定一切的東西",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-28.html"
+      }
+    },
+    {
+      "id": "l30-poles",
+      "topic": "complex-numbers",
+      "title": "極點位置決定穩不穩",
+      "caption": "極點從左半平面移到右半平面：響應從衰減、等幅振盪變成發散。",
+      "gif": "gifs/complex-numbers/l30-poles.gif",
+      "poster": "gifs/complex-numbers/l30-poles.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5354,
+      "lesson": {
+        "label": "第 30 課",
+        "title": "控制系統：一個點的位置決定機器會不會失控",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-30.html"
+      }
+    },
+    {
+      "id": "l31-rotation",
+      "topic": "complex-numbers",
+      "title": "旋轉不必用矩陣",
+      "caption": "連續三次旋轉，複數只要把角度相加；一次乘法就能轉回來。",
+      "gif": "gifs/complex-numbers/l31-rotation.gif",
+      "poster": "gifs/complex-numbers/l31-rotation.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3167,
+      "lesson": {
+        "label": "第 31 課",
+        "title": "電腦繪圖：旋轉不必用矩陣",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-31.html"
+      }
+    },
+    {
+      "id": "l32-mandelbrot",
+      "topic": "complex-numbers",
+      "title": "曼德博集合",
+      "caption": "c 點移動時，z → z² + c 的軌跡在集合內有界，跑到外面就逃逸。",
+      "gif": "gifs/complex-numbers/l32-mandelbrot.gif",
+      "poster": "gifs/complex-numbers/l32-mandelbrot.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5928,
+      "lesson": {
+        "label": "第 32 課",
+        "title": "碎形：一條簡單規則造出的無限複雜",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-32.html"
+      }
+    },
+    {
+      "id": "l33-fundamental",
+      "topic": "complex-numbers",
+      "title": "代數基本定理：n 次就有 n 個根",
+      "caption": "把 |p(z)| 畫成地形：2、3、4 次多項式各有 2、3、4 個凹陷碰到地面。",
+      "gif": "gifs/complex-numbers/l33-fundamental.gif",
+      "poster": "gifs/complex-numbers/l33-fundamental.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 10797,
+      "lesson": {
+        "label": "第 33 課",
+        "title": "代數基本定理：所有方程式都有解",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-33.html"
+      }
+    },
+    {
+      "id": "l34-conjugate-roots",
+      "topic": "complex-numbers",
+      "title": "共軛根成對出現",
+      "caption": "z² + c = 0：c 增加時兩個實根相撞，再分裂成上下對稱的一對共軛根。",
+      "gif": "gifs/complex-numbers/l34-conjugate-roots.gif",
+      "poster": "gifs/complex-numbers/l34-conjugate-roots.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4720,
+      "lesson": {
+        "label": "第 34 課",
+        "title": "「一定有解」在實務上的價值",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-34.html"
+      }
+    },
+    {
+      "id": "l35-extension-cost",
+      "topic": "complex-numbers",
+      "title": "為什麼不繼續擴充下去",
+      "caption": "實數→複數→四元數→八元數→十六元數：每升一階維度加倍、少一個性質。",
+      "gif": "gifs/complex-numbers/l35-extension-cost.gif",
+      "poster": "gifs/complex-numbers/l35-extension-cost.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5237,
+      "lesson": {
+        "label": "第 35 課",
+        "title": "為什麼不繼續擴充下去",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-35.html"
+      }
+    },
+    {
+      "id": "l36-no-order",
+      "topic": "complex-numbers",
+      "title": "複數不能比大小",
+      "caption": "平面上的點沒有先後；用同心圓比的是模 |z|，不是 z 本身。",
+      "gif": "gifs/complex-numbers/l36-no-order.gif",
+      "poster": "gifs/complex-numbers/l36-no-order.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6905,
+      "lesson": {
+        "label": "第 36 課",
+        "title": "五個常見誤解",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-36.html"
+      }
+    },
+    {
+      "id": "l36-sqrt-trap",
+      "topic": "complex-numbers",
+      "title": "√ 的陷阱",
+      "caption": "z 繞一圈回到 1，跟著連續變化的 √z 只走半圈，停在 −1。",
+      "gif": "gifs/complex-numbers/l36-sqrt-trap.gif",
+      "poster": "gifs/complex-numbers/l36-sqrt-trap.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4793,
+      "lesson": {
+        "label": "第 36 課",
+        "title": "五個常見誤解",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-36.html"
+      }
+    },
+    {
+      "id": "l38-matrix",
+      "topic": "complex-numbers",
+      "title": "i 就是旋轉 90° 的矩陣",
+      "caption": "[[0,−1],[1,0]] 作用在平面上就是轉 90°，套兩次就是 −I。",
+      "gif": "gifs/complex-numbers/l38-matrix.gif",
+      "poster": "gifs/complex-numbers/l38-matrix.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3347,
+      "lesson": {
+        "label": "第 38 課",
+        "title": "複數、向量與矩陣的關係",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-38.html"
+      }
+    },
+    {
+      "id": "l39-spiral",
+      "topic": "complex-numbers",
+      "title": "連續乘同一個數：螺線",
+      "caption": "每乘一次轉 25°、長度乘 |base|：大於 1 往外旋開，小於 1 往內收。",
+      "gif": "gifs/complex-numbers/l39-spiral.gif",
+      "poster": "gifs/complex-numbers/l39-spiral.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3680,
+      "lesson": {
+        "label": "第 39 課",
+        "title": "動手一：看複數乘法在轉什麼",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-39.html"
+      }
+    },
+    {
+      "id": "l40-gibbs",
+      "topic": "complex-numbers",
+      "title": "吉布斯現象",
+      "caption": "方波的部分和項數愈加愈多，轉角的過衝始終停在約 9%。",
+      "gif": "gifs/complex-numbers/l40-gibbs.gif",
+      "poster": "gifs/complex-numbers/l40-gibbs.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 6558,
+      "lesson": {
+        "label": "第 40 課",
+        "title": "動手二：用旋轉疊出一個方波",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-40.html"
+      }
+    },
+    {
+      "id": "l41-mandel-draw",
+      "topic": "complex-numbers",
+      "title": "曼德博集合怎麼畫",
+      "caption": "每個像素當成 c 迭代；最大迭代次數逐步增加，邊界愈來愈細。",
+      "gif": "gifs/complex-numbers/l41-mandel-draw.gif",
+      "poster": "gifs/complex-numbers/l41-mandel-draw.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 4003,
+      "lesson": {
+        "label": "第 41 課",
+        "title": "動手三：畫出曼德博集合",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-41.html"
+      }
+    },
+    {
+      "id": "l42-division",
+      "topic": "complex-numbers",
+      "title": "除法＝轉回去，再縮小",
+      "caption": "(1+3i)/(1+i)：角度減 45°、長度除以 √2，得到 2+i。",
+      "gif": "gifs/complex-numbers/l42-division.gif",
+      "poster": "gifs/complex-numbers/l42-division.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 5502,
+      "lesson": {
+        "label": "第 42 課",
+        "title": "運算速查：代數與幾何對照",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-42.html"
+      }
+    },
+    {
+      "id": "l43-unit-angles",
+      "topic": "complex-numbers",
+      "title": "單位圓上的常用角度",
+      "caption": "指針停在 16 個常用角度，對照 cos、sin 的精確值。",
+      "gif": "gifs/complex-numbers/l43-unit-angles.gif",
+      "poster": "gifs/complex-numbers/l43-unit-angles.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 8337,
+      "lesson": {
+        "label": "第 43 課",
+        "title": "公式速查：極座標與指數形式",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-43.html"
+      }
+    },
+    {
+      "id": "l44-plane-map",
+      "topic": "complex-numbers",
+      "title": "複數平面地圖",
+      "caption": "左半平面穩定、右半平面發散；實軸是電阻、+i 是電感、−i 是電容。",
+      "gif": "gifs/complex-numbers/l44-plane-map.gif",
+      "poster": "gifs/complex-numbers/l44-plane-map.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 2650,
+      "lesson": {
+        "label": "第 44 課",
+        "title": "應用速查：各領域的對照表",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-44.html"
+      }
+    },
+    {
+      "id": "l45-summary",
+      "topic": "complex-numbers",
+      "title": "複數到底在做什麼",
+      "caption": "三次乘法讓平面轉一轉、縮放一下：複數就是可以相乘的「旋轉加縮放」。",
+      "gif": "gifs/complex-numbers/l45-summary.gif",
+      "poster": "gifs/complex-numbers/l45-summary.png",
+      "w": 1280,
+      "h": 720,
+      "seconds": 12.0,
+      "kb": 3942,
+      "lesson": {
+        "label": "第 45 課",
+        "title": "一句話回答：複數到底在做什麼",
+        "url": "https://bstzeng.github.io/professor/topics/complex-numbers/lesson-45.html"
+      }
+    }
+  ]
 };
