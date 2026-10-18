@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博雅動圖館</title>
+<meta name="description" content="博雅書院課程裡的互動視覺化，錄成一張張會動的圖。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">🎞 博雅動圖館</a>
+    <nav class="site-nav">
+      <a href="#gallery">動圖</a>
+      <a id="professor-link" href="https://bstzeng.github.io/professor/" target="_blank" rel="noopener">博雅書院 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">博雅書院的互動視覺化</p>
+      <h1>博雅動圖館</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">
+        把課程裡的模擬與互動元件錄成動圖：雙擺、隨機漫步、梯度下降……
+        滑過卡片就會動，點進去可以回到原本的那一課自己玩。
+      </p>
+      <p id="hero-stats" class="hero-stats"></p>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="toolbar">
+        <label class="search">
+          <span class="visually-hidden">搜尋動圖</span>
+          <input id="search" type="search" placeholder="搜尋標題、主題或課名" autocomplete="off">
+        </label>
+        <label class="autoplay">
+          <input id="autoplay" type="checkbox">
+          <span>畫面內自動播放</span>
+        </label>
+      </div>
+      <div id="chips" class="chips" role="group" aria-label="依分類篩選"></div>
+      <div id="topic-filter" class="topic-filter" hidden></div>
+      <div id="grid" class="grid"></div>
+      <p id="empty" class="empty" hidden>沒有符合條件的動圖。</p>
+    </div>
+  </section>
+</main>
+
+<dialog id="viewer" class="viewer" aria-labelledby="viewer-title">
+  <div class="viewer-inner">
+    <button class="viewer-close" type="button" aria-label="關閉">✕</button>
+    <div class="viewer-media"><img id="viewer-img" alt=""></div>
+    <div class="viewer-body">
+      <a id="viewer-topic" class="topic-chip" target="_blank" rel="noopener"></a>
+      <h2 id="viewer-title"></h2>
+      <p id="viewer-caption"></p>
+      <div class="viewer-actions">
+        <a id="viewer-lesson" class="btn btn-primary" target="_blank" rel="noopener"></a>
+        <a id="viewer-download" class="btn" download>下載 GIF</a>
+      </div>
+      <p id="viewer-meta" class="meta"></p>
+    </div>
+  </div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="container">
+    動圖由 <code>tools/capture.py</code> 從博雅書院的課程頁自動錄製。
+  </div>
+</footer>
+
+<script src="data/gallery.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>
