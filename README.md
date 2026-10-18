@@ -17,6 +17,11 @@ clips/clips.json    每張動圖的設定（來源課程、要按哪些按鈕、
 gifs/<主題>/<id>.gif  動圖；同名 .png 是卡片的靜態封面
 tools/capture.py    錄製工具（Playwright 開課程頁 → 截圖 → 合成 GIF）
 tools/build.py      由 professor 的主題資料、clips.json 與 GIF 產生 data/gallery.js
+tools/anim/         three.js 教學動畫（規格見 STYLE.md）
+  engine.js         共用骨架：版面、霧、格線、bloom、發光物件、HUD 元件
+  stage.html        渲染舞台（stage.html?scene=<主題>/<id>&f=<格> 可在瀏覽器預覽單格）
+  scenes/<主題>/    每張動畫一個檔案，匯出 { setup, update, hud }
+  render.py         逐格渲染 → 合成 GIF（gifsicle 壓縮）→ 更新 data/gallery.js
 ```
 
 分類與主題直接取自 professor 的 `data/topics.js`；professor 新增主題後跑一次
@@ -66,6 +71,20 @@ tools/build.py      由 professor 的主題資料、clips.json 與 GIF 產生 da
 
 需要 Python 的 `playwright`、`Pillow`，以及 Node.js（用來讀 professor 的 `data/topics.js`）。
 單張動圖盡量控制在 1 MB 以內。
+
+## 製作 three.js 教學動畫
+
+規格（1280×720、15 fps、12 秒無縫循環、配色、版面、字體）寫在 `STYLE.md`。
+
+1. 第一次使用：`cd tools/anim && npm install`（three.js、Noto Sans TC、JetBrains Mono、gifsicle）。
+2. 在 `tools/anim/scenes/<主題>/` 新增場景檔，照現有檔案的寫法匯出：
+   - `camera`：鏡頭目標、距離、仰角、擺動幅度（可另加 `cameraPath(t)` 讓鏡頭轉到別的角度）
+   - `setup(st)`：建立 3D 物件
+   - `update(st, t, phase, s)`：依時間 t（0–12 秒）更新；第 180 格會接回第 0 格，所以所有動作都要在 12 秒內回到起點
+   - `hud(st, h, t, phase, s)`：畫標題、右側面板、左下公式與 callout
+3. 在 `clips/clips.json` 加一筆，用 `anim` 指向場景（例如 `"anim": "complex-numbers/l11-multiply"`），`page` 指向對應的課程頁。
+4. 預覽幾格：`python3 tools/anim/render.py <id> --preview 0,60,120`（PNG 輸出到 `gifs/_preview/`）。
+5. 正式輸出：`python3 tools/anim/render.py <id> [<id> …]`。
 
 ## 本機預覽
 
