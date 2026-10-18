@@ -6,15 +6,21 @@
 ## 結構
 
 ```
-index.html          首頁（卡片牆、分類、搜尋、大圖檢視）
+index.html          首頁：依分類列出 professor 的全部主題（不載入任何動圖）
+topic.html          主題頁：topic.html?t=<主題 id>，該主題的動圖卡片放在這裡
 css/style.css       樣式（色彩沿用 professor）
-js/gallery.js       首頁邏輯
-data/gallery.js     卡片資料——由 tools/build.py 產生，不要手動編輯
+js/common.js        共用小工具
+js/home.js          首頁邏輯（折疊分類、搜尋、只看有動圖的主題）
+js/topic.js         主題頁邏輯（麵包屑、動圖卡片、滑過播放、大圖檢視）
+data/gallery.js     分類、主題與動圖資料——由 tools/build.py 產生，不要手動編輯
 clips/clips.json    每張動圖的設定（來源課程、要按哪些按鈕、錄幾格）
 gifs/<主題>/<id>.gif  動圖；同名 .png 是卡片的靜態封面
 tools/capture.py    錄製工具（Playwright 開課程頁 → 截圖 → 合成 GIF）
-tools/build.py      由 clips.json 與 GIF 產生 data/gallery.js
+tools/build.py      由 professor 的主題資料、clips.json 與 GIF 產生 data/gallery.js
 ```
+
+分類與主題直接取自 professor 的 `data/topics.js`；professor 新增主題後跑一次
+`python3 tools/build.py`，首頁就會同步出現。還沒有動圖的主題會標示「尚無動圖」。
 
 ## 新增一張動圖
 
@@ -67,5 +73,6 @@ tools/build.py      由 clips.json 與 GIF 產生 data/gallery.js
 
 ## 網址
 
-首頁可用 hash 分享篩選結果：`#cat=math`、`#topic=chaos-theory`、`#q=擴散`，
-或 `#<id>`（例如 `#double-pendulum`）直接打開某張動圖。
+- `topic.html?t=chaos-theory`：主題頁
+- `topic.html?t=chaos-theory#<動圖 id>`：主題頁並直接打開那張動圖
+- `index.html#cat-math`：首頁並展開「數學」分類
