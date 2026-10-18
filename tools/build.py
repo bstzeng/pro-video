@@ -65,23 +65,15 @@ def main(prof):
     site = load_site_data(prof)
     topics_by_id = {t["id"]: t for t in site["topics"]}
 
-    clips, topics, skipped = [], {}, []
+    clips, skipped = [], []
     for c in spec["clips"]:
         slug = c["page"].split("/")[1]
         gif = f"gifs/{slug}/{c['id']}.gif"
         if not os.path.exists(os.path.join(ROOT, gif)):
             skipped.append(c["id"])
             continue
-        t = topics_by_id.get(slug)
-        if t is None:
+        if slug not in topics_by_id:
             sys.exit(f"{c['id']}：professor 裡沒有主題 {slug}")
-        topics[slug] = {
-            "title": t["title"],
-            "short": t["title"].split("：")[0],
-            "icon": t.get("icon", ""),
-            "category": t["category"],
-            "url": base + t["url"],
-        }
         w, h, sec, kb = gif_info(os.path.join(ROOT, gif))
         clips.append({
             "id": c["id"],
@@ -94,10 +86,23 @@ def main(prof):
             "lesson": lesson_info(prof, c["page"], base),
         })
 
-    used = {t["category"] for t in topics.values()}
+    # 首頁要列出 professor 的全部分類與主題（沒有動圖的也列，標示「尚無動圖」）
+    counts = {}
+    for c in clips:
+        counts[c["topic"]] = counts.get(c["topic"], 0) + 1
+    topics = [{
+        "id": t["id"],
+        "category": t.get("category", ""),
+        "title": t["title"],
+        "icon": t.get("icon", ""),
+        "description": t.get("description", ""),
+        "url": base + t["url"] if t.get("url") else "",
+        "clips": counts.get(t["id"], 0),
+    } for t in site["topics"]]
+
     data = {
         "professorBase": base,
-        "categories": [c for c in site["categories"] if c["id"] in used],
+        "categories": site["categories"],
         "topics": topics,
         "clips": clips,
     }
@@ -105,7 +110,7 @@ def main(prof):
     with open(out, "w", encoding="utf-8") as f:
         f.write("// 由 tools/build.py 產生，請勿手動編輯；要改內容請改 clips/clips.json 後重跑。\n")
         f.write("window.GALLERY = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n")
-    print(f"data/gallery.js：{len(clips)} 張動圖、{len(topics)} 個主題")
+    print(f"data/gallery.js：{len(topics)} 個主題、{len(clips)} 張動圖（{len(counts)} 個主題有動圖）")
     if skipped:
         print("尚未錄製（略過）：" + "、".join(skipped))
 

@@ -16,8 +16,8 @@
   <div class="container header-inner">
     <a href="index.html" class="brand">🎞 博雅動圖館</a>
     <nav class="site-nav">
-      <a href="#gallery">動圖</a>
-      <a id="professor-link" href="https://bstzeng.github.io/professor/" target="_blank" rel="noopener">博雅書院 ↗</a>
+      <a href="#topics">主題</a>
+      <a class="professor-link" href="https://bstzeng.github.io/professor/" target="_blank" rel="noopener">博雅書院 ↗</a>
     </nav>
   </div>
 </header>
@@ -29,49 +29,34 @@
       <h1>博雅動圖館</h1>
       <div class="hero-rule"></div>
       <p class="hero-sub">
-        把課程裡的模擬與互動元件錄成動圖：雙擺、隨機漫步、梯度下降……
-        滑過卡片就會動，點進去可以回到原本的那一課自己玩。
+        把課程裡的模擬與互動元件錄成動圖。
+        先選分類、再選主題，進到主題頁就能看到這門課的動圖。
       </p>
       <p id="hero-stats" class="hero-stats"></p>
     </div>
   </section>
 
-  <section id="gallery" class="gallery-section">
+  <section id="topics" class="topics-section">
     <div class="container">
-      <div class="toolbar">
-        <label class="search">
-          <span class="visually-hidden">搜尋動圖</span>
-          <input id="search" type="search" placeholder="搜尋標題、主題或課名" autocomplete="off">
-        </label>
-        <label class="autoplay">
-          <input id="autoplay" type="checkbox">
-          <span>畫面內自動播放</span>
-        </label>
+      <div class="topics-section-header">
+        <h2>主題總覽</h2>
+        <div class="topics-tools">
+          <label class="only-clips">
+            <input id="only-clips" type="checkbox">
+            <span>只看有動圖的主題</span>
+          </label>
+          <button id="toggle-all" class="toggle-all-btn" type="button">全部展開</button>
+        </div>
       </div>
-      <div id="chips" class="chips" role="group" aria-label="依分類篩選"></div>
-      <div id="topic-filter" class="topic-filter" hidden></div>
-      <div id="grid" class="grid"></div>
-      <p id="empty" class="empty" hidden>沒有符合條件的動圖。</p>
+      <label class="search">
+        <span class="visually-hidden">搜尋主題</span>
+        <input id="search" type="search" placeholder="搜尋主題" autocomplete="off">
+      </label>
+      <div id="groups"></div>
+      <p id="empty" class="empty-state" hidden></p>
     </div>
   </section>
 </main>
-
-<dialog id="viewer" class="viewer" aria-labelledby="viewer-title">
-  <div class="viewer-inner">
-    <button class="viewer-close" type="button" aria-label="關閉">✕</button>
-    <div class="viewer-media"><img id="viewer-img" alt=""></div>
-    <div class="viewer-body">
-      <a id="viewer-topic" class="topic-chip" target="_blank" rel="noopener"></a>
-      <h2 id="viewer-title"></h2>
-      <p id="viewer-caption"></p>
-      <div class="viewer-actions">
-        <a id="viewer-lesson" class="btn btn-primary" target="_blank" rel="noopener"></a>
-        <a id="viewer-download" class="btn" download>下載 GIF</a>
-      </div>
-      <p id="viewer-meta" class="meta"></p>
-    </div>
-  </div>
-</dialog>
 
 <footer class="site-footer">
   <div class="container">
@@ -80,6 +65,7 @@
 </footer>
 
 <script src="data/gallery.js"></script>
-<script src="js/gallery.js"></script>
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
